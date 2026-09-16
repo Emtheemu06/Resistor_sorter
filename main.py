@@ -1,4 +1,4 @@
-#importing numbers so I have easy access to some functions
+# importing numbers so I have easy access to some functions
 import numbers
 
 #setting up the lists to store the colors and values associted with the resistors
@@ -16,8 +16,20 @@ def num_of_bands():
     return int(band_num)
 
 def band_colors(band_num):
-    colors_resistor=[]
-    
+    #getting the colors from the user 
+    #calls color_check to then check those colors
+    print("There should be three or four bands that are closer together. ")
+    user_colors=input("What are the colors of those bands on the resistor? Please enter the list separated by a space: ")
+    colors_resistor=user_colors.split()
+
+def color_check(color_resisitor):
+#functions for making sure the colors given are valid
+    for color in color_resisitor:
+        match=False
+        while match ==False:
+            #insert for loop to loop through the other list and see if the colors match on in the list
+
+  
 def main():
     print("test")
     bandTest=num_of_bands()
