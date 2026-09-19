@@ -16,7 +16,7 @@ def num_of_bands():
         # this is the max that the resistor can have that effects the math
         band_num = 4
     global num
-    num=int(band_num)
+    num = int(band_num)
     return int(band_num)
 
 
@@ -30,7 +30,7 @@ def band_colors():
     user_colors = input("What are the colors of those bands on the resistor? "
         "Please enter the list separated by a space: ")
     colors_resistor_user = user_colors.split()
-    list=color_check(colors_resistor_user)
+    list = color_check(colors_resistor_user)
     return list
 
 
@@ -70,6 +70,10 @@ def check(color, num):
 def math(user_resistor_list):
     # function for doing the math to calculate the resitance
     print("placeholder")
+
+
+def getPosition(color):
+    #get hte position of the current color and return it
 
 
 def main():
