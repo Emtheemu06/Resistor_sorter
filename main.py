@@ -8,6 +8,8 @@ num = 0
 
 
 def num_of_bands():
+    # this function did not end up being as used since my plan on how to do this changed
+    # keeping it since it may be useful once the camera gets involved
     band_num = input("How many bands does the resistor have? ")
     while band_num.isdigit() == False:
         band_num = input("Please enter a number (ie 1 or 2) ")
@@ -69,17 +71,40 @@ def check(color, num):
 
 def math(user_resistor_list):
     # function for doing the math to calculate the resitance
+    total = 0
+    i = 0
     print("placeholder")
+    for current in user_resistor_list:
+        position = getPosition(current)
+        if i == 0:
+            total = total+digits[position]
+            i = i+1
+        elif i == 1:
+            total = total+(digits[position]*0.1)
+            i = i+1
+        elif i == 2:
+            total = total+(10**digits[position])
+            i = i+1
+        elif i > 3:
+            print("these bands are tolorance and tempture which do not effect the calculation")
+        else:
+            print("error")
+    return total
 
 
 def getPosition(color):
-    #get hte position of the current color and return it
+    # get the position of the current color and return it
+    i = 0
+    for base_color in colors_gen:
+        if base_color.casefold() == color.casefold():
+            return i
+        i = i+1
 
 
 def main():
     print("test")
     user_list = band_colors()
-    math(user_list)
+    print(math(user_list))
 
 
 if __name__ == "__main__":
